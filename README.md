@@ -11,7 +11,7 @@ docker rmi <image-id>
 docker build 
 
 
-##Container Commands
+## Container Commands
 
 docker ps     (list all running container)
 
