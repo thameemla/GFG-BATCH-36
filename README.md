@@ -22,3 +22,13 @@ docker ps -aq  (List only ID)
 docker rm <cont-id>
 
 docker rm -f $(docker ps -aq)
+
+docker run
+
+	docker run -it <image-name> /bin/bash
+ 
+	docker exec -it <cont-id> /bin/bash
+
+docker stop <cont-id/name>
+
+docker start <cont-id/name>
