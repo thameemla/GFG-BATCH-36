@@ -4,7 +4,7 @@ docker images
 
 docker image ls
 
-dcoker pull <image-name>
+docker pull <image-name>
 
 docker rmi <image-id>
 
