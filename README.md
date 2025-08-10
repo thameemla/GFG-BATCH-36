@@ -51,3 +51,8 @@ https://www.jenkins.io/download/thank-you-downloading-windows-installer-stable
 3. Pipeline: Build Steps
 4. Pipeline: Basic Steps
 
+# EKS Kubernetes Commands
+
+aws eks --region ap-south-1 describe-cluster --name hiteshCluster --query cluster.status
+
+aws eks --region ap-south-1 update-kubeconfig --name hiteshCluster
