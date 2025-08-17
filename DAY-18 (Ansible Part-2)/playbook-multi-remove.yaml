@@ -9,13 +9,3 @@
       action: yum name=httpd state=absent
     - name: Install Git
       action: yum name=git state=absent
-    - name: Remove git completely
-      ansible.builtin.yum:
-        name: git
-        state: absent
-    - name: Remove global Git config
-      ansible.builtin.file:
-        path: /etc/gitconfig
-        state: absent
-
-
