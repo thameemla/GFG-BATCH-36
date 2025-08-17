@@ -1,0 +1,22 @@
+[
+  {
+    "hosts": "devops",
+    "user": "gfg",
+    "become": true,
+    "connection": "ssh",
+    "tasks": [
+      {
+        "name": "install httpd",
+        "command": "yum install httpd -y"
+      },
+      {
+        "name": "start httpd service",
+        "command": "sudo systemctl start httpd"
+      },
+      {
+        "name": "httpd service status",
+        "command": "sudo systemctl status httpd"
+      }
+    ]
+  }
+]
