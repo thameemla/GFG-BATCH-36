@@ -1,0 +1,10 @@
+---
+- hosts: devops
+  user: gfg
+  become: yes
+  connection: ssh
+  tasks:
+    - name: Stop HTTPD Service
+      action: service name=httpd state=stopped
+    - name: Remove HTTPD
+      action: yum name=httpd state=absent

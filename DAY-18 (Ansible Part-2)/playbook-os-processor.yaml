@@ -1,0 +1,31 @@
+---
+- hosts: devops
+  user: gfg
+  become: yes
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+    - name: Install httpd on RedHat Family (x86_64)
+      command: yum install httpd -y
+      when:
+        - ansible_os_family == "RedHat"
+        - ansible_architecture == "x86_64"
+
+    - name: Install httpd on RedHat Family (arm64/aarch64)
+      command: yum install httpd -y
+      when:
+        - ansible_os_family == "RedHat"
+        - ansible_architecture in ["aarch64", "arm64"]
+
+    - name: Install apache2 on Debian Family (x86_64)
+      command: apt-get install apache2 -y
+      when:
+        - ansible_os_family == "Debian"
+        - ansible_architecture == "x86_64"
+
+    - name: Install apache2 on Debian Family (arm64/aarch64)
+      command: apt-get install apache2 -y
+      when:
+        - ansible_os_family == "Debian"
+        - ansible_architecture in ["aarch64", "arm64"]

@@ -1,0 +1,7 @@
+yum update -y
+
+yum install git python python-pip openssl -y
+
+yum install ansible
+
+ansible --version
