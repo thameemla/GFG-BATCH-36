@@ -1,0 +1,25 @@
+---
+- hosts: devops
+  user: gfg
+  become: yes
+  vars:
+    operation: install   # default, can be overridden with -e
+    packages: []         # empty default, to be passed from CLI
+
+  tasks:
+    - name: Install packages (RedHat family)
+      yum:
+        name: "{{ packages }}"
+        state: present
+      when: operation == "install"
+
+    - name: Remove packages (RedHat family)
+      yum:
+        name: "{{ packages }}"
+        state: absent
+      when: operation == "remove"
+
+    - name: Autoremove unused dependencies (only on removal)
+      yum:
+        autoremove: yes
+      when: operation == "remove"
